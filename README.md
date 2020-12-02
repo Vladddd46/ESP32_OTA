@@ -7,6 +7,10 @@ https://github.com/Vladddd46/esp32_WIFI/creative describes how to connect esp32 
 
 <p>In order to set OTA on esp32 you need to do the following steps:</p>
 <ul>
-<li> Integrate code from main/check_firmware_updates_task.c in your code. check_firmware_updates_task should be separate task, which periodically checks. if any firmware update is available.
-</li>
+	<li> Integrate code from main/check_firmware_updates_task.c in your code. check_firmware_updates_task should be separate task, which periodically checks. if any firmware update is available.
+	</li>
+	<li>CMakeLists.txt: add <b>json</b> component in REQUIRES and add <b>EMBED_TXTFILES ../server_certs/ca_cert.pem</b> in idf_component_register command</li>
+	<li>Create two partrition tables for ota1 and ota2. It can be done in menuconfig(idf.py menuconfig) -> Partrition tables</li>
+	<li>Create server_certs folder and paste server certificate in it. ca_cert.pem - file with certificate must have this name.</li>
+	<li>Create main/component.mk file with line 'COMPONENT_EMBED_TXTFILES :=  ../server_certs/ca_cert.pem'</li>
 </ul>
