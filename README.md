@@ -14,3 +14,14 @@ https://github.com/Vladddd46/esp32_WIFI/creative describes how to connect esp32 
 	<li>Create server_certs folder and paste server certificate in it. ca_cert.pem - file with certificate must have this name.</li>
 	<li>Create main/component.mk file with line 'COMPONENT_EMBED_TXTFILES :=  ../server_certs/ca_cert.pem'</li>
 </ul>
+
+
+<p>In main/check_firmware_updates_task.c there is define UPDATE_JSON_URL. It is link to json file with the following format:
+{
+    "version": 0.2,
+    "file": "https://www.some_domain.com/firmwares/2.0.bin"
+}
+check_firmware_updates_task periodically downloads this json file, parse it, check version with version of firmware on esp32. If versions differ, downloads new firmware by link, contained in "file" key.
+</p>
+
+
