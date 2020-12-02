@@ -16,11 +16,11 @@ https://github.com/Vladddd46/esp32_WIFI/creative describes how to connect esp32 
 </ul>
 
 
-<p>In main/check_firmware_updates_task.c there is define UPDATE_JSON_URL. It is link to json file with the following format:
-{
+<p>In main/check_firmware_updates_task.c there is define UPDATE_JSON_URL. It is link to json file with the following format: 
+<b>{
     "version": 0.2,
     "file": "https://www.some_domain.com/firmwares/2.0.bin"
-}
+}</b>
 check_firmware_updates_task periodically downloads this json file, parse it, check version with version of firmware on esp32. If versions differ, downloads new firmware by link, contained in "file" key.
 </p>
 
