@@ -17,9 +17,8 @@
 #include "esp_event.h"
 #include "esp_log.h"
 #include "utils.h"
-#include "tehu.h"
 #include "http_header.h"
-
+#include "connect_to_wifi.h"
 /* Config */
 #define COMMAND_LINE_MAX_LENGTH 100
 #define NEWLINE 				"\n\r"		

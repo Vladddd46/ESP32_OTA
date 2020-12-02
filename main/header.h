@@ -31,15 +31,13 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include "utils.h"
-#include "get_dht11_data.h"
 #include "http_header.h"
 #include "esp_tls.h"
 #include "esp_crt_bundle.h"
 #include "connect_to_wifi.h"
 #include "input.h"
-#include "tehu.h"
 #include "wifi_module.h"
 #include "my_http_server.h"
 #include <stdlib.h>
 
-void check_update_task();
+void check_firmware_updates_task();

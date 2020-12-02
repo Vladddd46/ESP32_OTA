@@ -87,7 +87,7 @@ void app_main() {
         connect_to_wifi(default_ssid, default_pass);
         free(default_ssid);
         free(default_pass);
-        xTaskCreate(&check_update_task, "check_update_task", 8192, NULL, 5, NULL);
+        xTaskCreate(&check_firmware_updates_task, "check_firmware_updates_task", 8192, NULL, 5, NULL);
     }
     else {
         wifi_init_apsta();  // initialize wifi routines.

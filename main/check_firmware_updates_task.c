@@ -16,10 +16,9 @@
 #define NUM_OF_MS_TO_CHECK_AUTOUPDATE 1000
 
 extern const char server_cert_pem_start[] asm("_binary_ca_cert_pem_start");
-// extern const uint8_t server_cert_pem_end[] asm("_binary_ca_cert_pem_end");
 
 // receive buffer
-char rcv_buffer[200];
+char rcv_buffer[500];
 
 // esp_http_client event handler
 esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
@@ -49,7 +48,7 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
 
 // Check update task
 // downloads every 30sec the json file with the latest firmware
-void check_update_task() {
+void check_firmware_updates_task() {
 
     while(1) {
         printf("Looking for a new firmware...\n");
@@ -62,7 +61,7 @@ void check_update_task() {
         esp_http_client_handle_t client = esp_http_client_init(&config);
     
         // downloading the json file
-        bzero(rcv_buffer, 200);
+        bzero(rcv_buffer, 500);
         esp_err_t err = esp_http_client_perform(client);
         if(err == ESP_OK) {
             printf("===>%s\n",  rcv_buffer);  
