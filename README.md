@@ -6,6 +6,7 @@ https://github.com/Vladddd46/esp32_WIFI/creative describes how to connect esp32 
 
 
 <p>In order to set OTA on esp32 you need to do the following steps:</p>
-<li>
-	<ul>Integrate code from main/check_firmware_updates_task.c in your code. check_firmware_updates_task should be separate task, which periodically checks. if any firmware update is available.</ul>
+<ul>
+<li> Integrate code from main/check_firmware_updates_task.c in your code. check_firmware_updates_task should be separate task, which periodically checks. if any firmware update is available.
 </li>
+</ul>
